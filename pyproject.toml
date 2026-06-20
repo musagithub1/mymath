@@ -1,0 +1,27 @@
+# pyproject.toml
+# --------------
+# This file tells pip what tools are needed BEFORE it can even run setup.py.
+# These are called "build dependencies".
+#
+# When you run "pip install .", pip reads this file first, installs
+# setuptools and pybind11, and THEN runs setup.py to compile the C++ code.
+
+[build-system]
+# These packages must be installed before building:
+#   - setuptools: the standard Python build tool
+#   - pybind11:   provides the C++ <-> Python bridge
+requires = ["setuptools>=42", "pybind11>=2.10"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mymath"
+version = "0.1.0"
+description = "A simple math library written in C++ with pybind11"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [{name = "Mussa Khan"}]
+
+[project.urls]
+Homepage = "https://github.com/musagithub1/mymath"
+Repository = "https://github.com/musagithub1/mymath"
+Issues = "https://github.com/musagithub1/mymath/issues"
