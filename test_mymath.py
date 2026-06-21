@@ -57,4 +57,56 @@ except RuntimeError as e:
     print(f"average([]) correctly raised: {e}")
 
 # ============================================================
+# Test 7: subtract
+# ============================================================
+result = mymath.subtract(10, 3)
+print(f"subtract(10, 3) = {result}")     # Expected: 7.0
+assert result == 7.0, f"Expected 7.0, got {result}"
+
+# ============================================================
+# Test 8: subtract with negative result
+# ============================================================
+result = mymath.subtract(3, 10)
+print(f"subtract(3, 10) = {result}")     # Expected: -7.0
+assert result == -7.0, f"Expected -7.0, got {result}"
+
+# ============================================================
+# Test 9: power
+# ============================================================
+result = mymath.power(2, 10)
+print(f"power(2, 10) = {result}")        # Expected: 1024.0
+assert result == 1024.0, f"Expected 1024.0, got {result}"
+
+# ============================================================
+# Test 10: power with fractional exponent
+# ============================================================
+result = mymath.power(9, 0.5)
+print(f"power(9, 0.5) = {result}")       # Expected: 3.0
+assert result == 3.0, f"Expected 3.0, got {result}"
+
+# ============================================================
+# Test 11: factorial
+# ============================================================
+result = mymath.factorial(5)
+print(f"factorial(5) = {result}")        # Expected: 120.0
+assert result == 120.0, f"Expected 120.0, got {result}"
+
+# ============================================================
+# Test 12: factorial of 0
+# ============================================================
+result = mymath.factorial(0)
+print(f"factorial(0) = {result}")        # Expected: 1.0
+assert result == 1.0, f"Expected 1.0, got {result}"
+
+# ============================================================
+# Test 13: factorial of negative should raise an error
+# ============================================================
+try:
+    mymath.factorial(-1)
+    print("ERROR: factorial(-1) should have raised an exception!")
+except RuntimeError as e:
+    print(f"factorial(-1) correctly raised: {e}")
+
+# ============================================================
 print("\n✅ All tests passed!")
+

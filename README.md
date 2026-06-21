@@ -24,6 +24,15 @@ print(mymath.add(5, 3))            # 8.0
 # Multiply two numbers
 print(mymath.multiply(4, 2))       # 8.0
 
+# Subtract two numbers
+print(mymath.subtract(10, 3))      # 7.0
+
+# Raise to a power
+print(mymath.power(2, 10))         # 1024.0
+
+# Factorial
+print(mymath.factorial(5))         # 120.0
+
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
 ```
@@ -33,7 +42,10 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | Function | Description | Example |
 |---|---|---|
 | `add(a, b)` | Add two numbers | `mymath.add(5, 3)` → `8.0` |
+| `subtract(a, b)` | Subtract two numbers | `mymath.subtract(10, 3)` → `7.0` |
 | `multiply(a, b)` | Multiply two numbers | `mymath.multiply(4, 2)` → `8.0` |
+| `power(base, exponent)` | Raise base to exponent | `mymath.power(2, 10)` → `1024.0` |
+| `factorial(n)` | Factorial of a non-negative integer | `mymath.factorial(5)` → `120.0` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works

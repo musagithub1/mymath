@@ -14,6 +14,7 @@
 #include <vector>               // C++ dynamic array (similar to Python list)
 #include <numeric>              // For std::accumulate (to sum numbers)
 #include <stdexcept>            // For std::runtime_error (to raise errors)
+#include <cmath>                // For std::pow (exponentiation)
 
 // ============================================================
 // Function 1: add
@@ -46,6 +47,39 @@ double average(const std::vector<double>& numbers) {
 }
 
 // ============================================================
+// Function 4: subtract
+// Takes two numbers and returns their difference.
+// ============================================================
+double subtract(double a, double b) {
+    return a - b;
+}
+
+// ============================================================
+// Function 5: power
+// Raises base to the given exponent using std::pow.
+// ============================================================
+double power(double base, double exponent) {
+    return std::pow(base, exponent);
+}
+
+// ============================================================
+// Function 6: factorial
+// Computes the factorial of a non-negative integer.
+// Returns a double to handle large results (up to ~170!).
+// Throws an error for negative inputs.
+// ============================================================
+double factorial(int n) {
+    if (n < 0) {
+        throw std::runtime_error("Cannot compute factorial of a negative number");
+    }
+    double result = 1.0;
+    for (int i = 2; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -73,4 +107,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("average", &average,
           "Compute the average (mean) of a list of numbers.",
           pybind11::arg("numbers"));
+
+    m.def("subtract", &subtract,
+          "Subtract b from a and return the result.",
+          pybind11::arg("a"), pybind11::arg("b"));
+
+    m.def("power", &power,
+          "Raise base to the given exponent and return the result.",
+          pybind11::arg("base"), pybind11::arg("exponent"));
+
+    m.def("factorial", &factorial,
+          "Compute the factorial of a non-negative integer.",
+          pybind11::arg("n"));
 }
