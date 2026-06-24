@@ -80,6 +80,44 @@ double factorial(int n) {
 }
 
 // ============================================================
+// Function 7: divide
+// Divides a by b. Throws an error if b is zero.
+// ============================================================
+double divide(double a, double b) {
+    if (b == 0.0) {
+        throw std::runtime_error("Division by zero is not allowed");
+    }
+    return a / b;
+}
+
+// ============================================================
+// Function 8: square_root
+// Computes the square root of a non-negative number.
+// Throws an error for negative inputs.
+// ============================================================
+double square_root(double x) {
+    if (x < 0.0) {
+        throw std::runtime_error("Cannot compute square root of a negative number");
+    }
+    return std::sqrt(x);
+}
+
+// ============================================================
+// Function 9: gcd
+// Computes the greatest common divisor of two integers.
+// ============================================================
+int gcd(int a, int b) {
+    a = std::abs(a);
+    b = std::abs(b);
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -119,4 +157,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("factorial", &factorial,
           "Compute the factorial of a non-negative integer.",
           pybind11::arg("n"));
+
+    m.def("divide", &divide,
+          "Divide a by b and return the result. Throws an error if b is zero.",
+          pybind11::arg("a"), pybind11::arg("b"));
+
+    m.def("square_root", &square_root,
+          "Compute the square root of a non-negative number.",
+          pybind11::arg("x"));
+
+    m.def("gcd", &gcd,
+          "Compute the greatest common divisor of two integers.",
+          pybind11::arg("a"), pybind11::arg("b"));
 }

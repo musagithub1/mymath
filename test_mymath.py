@@ -108,5 +108,58 @@ except RuntimeError as e:
     print(f"factorial(-1) correctly raised: {e}")
 
 # ============================================================
+# Test 14: divide
+# ============================================================
+result = mymath.divide(10, 2)
+print(f"divide(10, 2) = {result}")        # Expected: 5.0
+assert result == 5.0, f"Expected 5.0, got {result}"
+
+# ============================================================
+# Test 15: divide by zero should raise an error
+# ============================================================
+try:
+    mymath.divide(5, 0)
+    print("ERROR: divide(5, 0) should have raised an exception!")
+except RuntimeError as e:
+    print(f"divide(5, 0) correctly raised: {e}")
+
+# ============================================================
+# Test 16: square_root
+# ============================================================
+result = mymath.square_root(16)
+print(f"square_root(16) = {result}")      # Expected: 4.0
+assert result == 4.0, f"Expected 4.0, got {result}"
+
+# ============================================================
+# Test 17: square_root of negative should raise an error
+# ============================================================
+try:
+    mymath.square_root(-4)
+    print("ERROR: square_root(-4) should have raised an exception!")
+except RuntimeError as e:
+    print(f"square_root(-4) correctly raised: {e}")
+
+# ============================================================
+# Test 18: gcd
+# ============================================================
+result = mymath.gcd(54, 24)
+print(f"gcd(54, 24) = {result}")          # Expected: 6
+assert result == 6, f"Expected 6, got {result}"
+
+# ============================================================
+# Test 19: gcd with negative numbers
+# ============================================================
+result = mymath.gcd(-48, 18)
+print(f"gcd(-48, 18) = {result}")         # Expected: 6
+assert result == 6, f"Expected 6, got {result}"
+
+# ============================================================
+# Test 20: gcd with zero
+# ============================================================
+result = mymath.gcd(0, 5)
+print(f"gcd(0, 5) = {result}")            # Expected: 5
+assert result == 5, f"Expected 5, got {result}"
+
+# ============================================================
 print("\n✅ All tests passed!")
 

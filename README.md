@@ -27,11 +27,20 @@ print(mymath.multiply(4, 2))       # 8.0
 # Subtract two numbers
 print(mymath.subtract(10, 3))      # 7.0
 
+# Divide two numbers
+print(mymath.divide(10, 2))        # 5.0
+
 # Raise to a power
 print(mymath.power(2, 10))         # 1024.0
 
+# Square root
+print(mymath.square_root(16))      # 4.0
+
 # Factorial
 print(mymath.factorial(5))         # 120.0
+
+# Greatest common divisor
+print(mymath.gcd(54, 24))          # 6
 
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
@@ -44,8 +53,11 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | `add(a, b)` | Add two numbers | `mymath.add(5, 3)` → `8.0` |
 | `subtract(a, b)` | Subtract two numbers | `mymath.subtract(10, 3)` → `7.0` |
 | `multiply(a, b)` | Multiply two numbers | `mymath.multiply(4, 2)` → `8.0` |
+| `divide(a, b)` | Divide two numbers | `mymath.divide(10, 2)` → `5.0` |
 | `power(base, exponent)` | Raise base to exponent | `mymath.power(2, 10)` → `1024.0` |
+| `square_root(x)` | Square root of a non-negative number | `mymath.square_root(16)` → `4.0` |
 | `factorial(n)` | Factorial of a non-negative integer | `mymath.factorial(5)` → `120.0` |
+| `gcd(a, b)` | Greatest common divisor of two integers | `mymath.gcd(54, 24)` → `6` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works
