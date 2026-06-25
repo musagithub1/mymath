@@ -161,5 +161,62 @@ print(f"gcd(0, 5) = {result}")            # Expected: 5
 assert result == 5, f"Expected 5, got {result}"
 
 # ============================================================
+# Test 21: lcm
+# ============================================================
+result = mymath.lcm(12, 18)
+print(f"lcm(12, 18) = {result}")          # Expected: 36
+assert result == 36, f"Expected 36, got {result}"
+
+# ============================================================
+# Test 22: lcm with zero
+# ============================================================
+result = mymath.lcm(0, 5)
+print(f"lcm(0, 5) = {result}")            # Expected: 0
+assert result == 0, f"Expected 0, got {result}"
+
+# ============================================================
+# Test 23: is_prime
+# ============================================================
+assert mymath.is_prime(2) == True, "Expected 2 to be prime"
+assert mymath.is_prime(17) == True, "Expected 17 to be prime"
+assert mymath.is_prime(4) == False, "Expected 4 not to be prime"
+assert mymath.is_prime(1) == False, "Expected 1 not to be prime"
+assert mymath.is_prime(-7) == False, "Expected -7 not to be prime"
+print("is_prime tests passed!")
+
+# ============================================================
+# Test 24: logarithm
+# ============================================================
+result = mymath.logarithm(100, 10)
+print(f"logarithm(100, 10) = {result}")    # Expected: 2.0
+assert abs(result - 2.0) < 1e-9, f"Expected 2.0, got {result}"
+
+# ============================================================
+# Test 25: logarithm with natural base
+# ============================================================
+import math
+result = mymath.logarithm(math.e, math.e)
+print(f"logarithm(e, e) = {result}")      # Expected: 1.0
+assert abs(result - 1.0) < 1e-9, f"Expected 1.0, got {result}"
+
+# ============================================================
+# Test 26: logarithm with negative argument should raise error
+# ============================================================
+try:
+    mymath.logarithm(-10, 10)
+    print("ERROR: logarithm(-10, 10) should have raised an exception!")
+except RuntimeError as e:
+    print(f"logarithm(-10, 10) correctly raised: {e}")
+
+# ============================================================
+# Test 27: logarithm with invalid base should raise error
+# ============================================================
+try:
+    mymath.logarithm(10, 1)
+    print("ERROR: logarithm(10, 1) should have raised an exception!")
+except RuntimeError as e:
+    print(f"logarithm(10, 1) correctly raised: {e}")
+
+# ============================================================
 print("\n✅ All tests passed!")
 

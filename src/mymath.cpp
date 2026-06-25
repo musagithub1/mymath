@@ -118,6 +118,57 @@ int gcd(int a, int b) {
 }
 
 // ============================================================
+// Function 10: lcm
+// Computes the least common multiple of two integers.
+// ============================================================
+int lcm(int a, int b) {
+    if (a == 0 || b == 0) {
+        return 0;
+    }
+    a = std::abs(a);
+    b = std::abs(b);
+    int g = gcd(a, b);
+    return (a / g) * b;
+}
+
+// ============================================================
+// Function 11: is_prime
+// Checks if an integer is a prime number.
+// ============================================================
+bool is_prime(int n) {
+    if (n <= 1) {
+        return false;
+    }
+    if (n <= 3) {
+        return true;
+    }
+    if (n % 2 == 0 || n % 3 == 0) {
+        return false;
+    }
+    for (int i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// ============================================================
+// Function 12: logarithm
+// Computes the logarithm of x with respect to base.
+// Throws an error for non-positive values of x or invalid bases.
+// ============================================================
+double logarithm(double x, double base) {
+    if (x <= 0.0) {
+        throw std::runtime_error("Logarithm argument must be positive");
+    }
+    if (base <= 0.0 || base == 1.0) {
+        throw std::runtime_error("Logarithm base must be positive and not equal to 1");
+    }
+    return std::log(x) / std::log(base);
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -169,4 +220,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("gcd", &gcd,
           "Compute the greatest common divisor of two integers.",
           pybind11::arg("a"), pybind11::arg("b"));
+
+    m.def("lcm", &lcm,
+          "Compute the least common multiple of two integers.",
+          pybind11::arg("a"), pybind11::arg("b"));
+
+    m.def("is_prime", &is_prime,
+          "Check if an integer is a prime number.",
+          pybind11::arg("n"));
+
+    m.def("logarithm", &logarithm,
+          "Compute the logarithm of x with respect to base.",
+          pybind11::arg("x"), pybind11::arg("base"));
 }

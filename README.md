@@ -42,6 +42,15 @@ print(mymath.factorial(5))         # 120.0
 # Greatest common divisor
 print(mymath.gcd(54, 24))          # 6
 
+# Least common multiple
+print(mymath.lcm(12, 18))          # 36
+
+# Prime check
+print(mymath.is_prime(17))         # True
+
+# Logarithm
+print(mymath.logarithm(100, 10))   # 2.0
+
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
 ```
@@ -58,6 +67,9 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | `square_root(x)` | Square root of a non-negative number | `mymath.square_root(16)` → `4.0` |
 | `factorial(n)` | Factorial of a non-negative integer | `mymath.factorial(5)` → `120.0` |
 | `gcd(a, b)` | Greatest common divisor of two integers | `mymath.gcd(54, 24)` → `6` |
+| `lcm(a, b)` | Least common multiple of two integers | `mymath.lcm(12, 18)` → `36` |
+| `is_prime(n)` | Check if an integer is a prime number | `mymath.is_prime(17)` → `True` |
+| `logarithm(x, base)` | Logarithm of x with respect to base | `mymath.logarithm(100, 10)` → `2.0` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works
