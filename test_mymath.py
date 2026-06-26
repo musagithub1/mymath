@@ -218,5 +218,54 @@ except RuntimeError as e:
     print(f"logarithm(10, 1) correctly raised: {e}")
 
 # ============================================================
+# Test 28: variance
+# ============================================================
+result = mymath.variance([2, 4, 4, 4, 5, 5, 7, 9])
+print(f"variance([2, 4, 4, 4, 5, 5, 7, 9]) = {result}")  # Expected: 4.0 (mean = 5, variance = 32 / 8 = 4.0)
+assert abs(result - 4.0) < 1e-9, f"Expected 4.0, got {result}"
+
+# ============================================================
+# Test 29: variance empty list error
+# ============================================================
+try:
+    mymath.variance([])
+    print("ERROR: variance([]) should have raised an exception!")
+except RuntimeError as e:
+    print(f"variance([]) correctly raised: {e}")
+
+# ============================================================
+# Test 30: standard_deviation
+# ============================================================
+result = mymath.standard_deviation([2, 4, 4, 4, 5, 5, 7, 9])
+print(f"standard_deviation([2, 4, 4, 4, 5, 5, 7, 9]) = {result}")  # Expected: 2.0
+assert abs(result - 2.0) < 1e-9, f"Expected 2.0, got {result}"
+
+# ============================================================
+# Test 31: standard_deviation empty list error
+# ============================================================
+try:
+    mymath.standard_deviation([])
+    print("ERROR: standard_deviation([]) should have raised an exception!")
+except RuntimeError as e:
+    print(f"standard_deviation([]) correctly raised: {e}")
+
+# ============================================================
+# Test 32: fibonacci
+# ============================================================
+assert mymath.fibonacci(0) == 0, f"Expected 0, got {mymath.fibonacci(0)}"
+assert mymath.fibonacci(1) == 1, f"Expected 1, got {mymath.fibonacci(1)}"
+assert mymath.fibonacci(10) == 55, f"Expected 55, got {mymath.fibonacci(10)}"
+print("fibonacci basic tests passed!")
+
+# ============================================================
+# Test 33: fibonacci negative index error
+# ============================================================
+try:
+    mymath.fibonacci(-5)
+    print("ERROR: fibonacci(-5) should have raised an exception!")
+except RuntimeError as e:
+    print(f"fibonacci(-5) correctly raised: {e}")
+
+# ============================================================
 print("\n✅ All tests passed!")
 

@@ -169,6 +169,54 @@ double logarithm(double x, double base) {
 }
 
 // ============================================================
+// Function 13: variance
+// Computes the population variance of a list of numbers.
+// ============================================================
+double variance(const std::vector<double>& numbers) {
+    if (numbers.empty()) {
+        throw std::runtime_error("Cannot compute variance of an empty list");
+    }
+    double avg = average(numbers);
+    double sum_sq_diff = 0.0;
+    for (double x : numbers) {
+        sum_sq_diff += (x - avg) * (x - avg);
+    }
+    return sum_sq_diff / static_cast<double>(numbers.size());
+}
+
+// ============================================================
+// Function 14: standard_deviation
+// Computes the population standard deviation of a list of numbers.
+// ============================================================
+double standard_deviation(const std::vector<double>& numbers) {
+    if (numbers.empty()) {
+        throw std::runtime_error("Cannot compute standard deviation of an empty list");
+    }
+    return std::sqrt(variance(numbers));
+}
+
+// ============================================================
+// Function 15: fibonacci
+// Computes the n-th Fibonacci number.
+// Throws an error for negative inputs.
+// ============================================================
+long long fibonacci(int n) {
+    if (n < 0) {
+        throw std::runtime_error("Cannot compute Fibonacci for a negative index");
+    }
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    long long a = 0;
+    long long b = 1;
+    for (int i = 2; i <= n; ++i) {
+        long long c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -232,4 +280,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("logarithm", &logarithm,
           "Compute the logarithm of x with respect to base.",
           pybind11::arg("x"), pybind11::arg("base"));
+
+    m.def("variance", &variance,
+          "Compute the population variance of a list of numbers.",
+          pybind11::arg("numbers"));
+
+    m.def("standard_deviation", &standard_deviation,
+          "Compute the population standard deviation of a list of numbers.",
+          pybind11::arg("numbers"));
+
+    m.def("fibonacci", &fibonacci,
+          "Compute the n-th Fibonacci number.",
+          pybind11::arg("n"));
 }

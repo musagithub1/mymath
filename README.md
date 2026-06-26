@@ -51,6 +51,15 @@ print(mymath.is_prime(17))         # True
 # Logarithm
 print(mymath.logarithm(100, 10))   # 2.0
 
+# Variance of a list
+print(mymath.variance([2, 4, 4, 4, 5, 5, 7, 9]))  # 4.0
+
+# Standard deviation of a list
+print(mymath.standard_deviation([2, 4, 4, 4, 5, 5, 7, 9]))  # 2.0
+
+# Fibonacci number
+print(mymath.fibonacci(10))        # 55
+
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
 ```
@@ -70,6 +79,9 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | `lcm(a, b)` | Least common multiple of two integers | `mymath.lcm(12, 18)` → `36` |
 | `is_prime(n)` | Check if an integer is a prime number | `mymath.is_prime(17)` → `True` |
 | `logarithm(x, base)` | Logarithm of x with respect to base | `mymath.logarithm(100, 10)` → `2.0` |
+| `variance(numbers)` | Population variance of a list of numbers | `mymath.variance([2, 4, 4, 4, 5, 5, 7, 9])` → `4.0` |
+| `standard_deviation(numbers)` | Population standard deviation of a list | `mymath.standard_deviation([2, 4, 4, 4, 5, 5, 7, 9])` → `2.0` |
+| `fibonacci(n)` | Compute the n-th Fibonacci number | `mymath.fibonacci(10)` → `55` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works
