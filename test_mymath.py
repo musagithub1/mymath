@@ -267,5 +267,27 @@ except RuntimeError as e:
     print(f"fibonacci(-5) correctly raised: {e}")
 
 # ============================================================
+# Test 34: sine
+# ============================================================
+import math
+result = mymath.sine(math.pi / 2)
+print(f"sine(pi/2) = {result}")          # Expected: 1.0
+assert abs(result - 1.0) < 1e-9, f"Expected 1.0, got {result}"
+
+# ============================================================
+# Test 35: cosine
+# ============================================================
+result = mymath.cosine(math.pi)
+print(f"cosine(pi) = {result}")          # Expected: -1.0
+assert abs(result - (-1.0)) < 1e-9, f"Expected -1.0, got {result}"
+
+# ============================================================
+# Test 36: tangent
+# ============================================================
+result = mymath.tangent(math.pi / 4)
+print(f"tangent(pi/4) = {result}")        # Expected: 1.0
+assert abs(result - 1.0) < 1e-9, f"Expected 1.0, got {result}"
+
+# ============================================================
 print("\n✅ All tests passed!")
 

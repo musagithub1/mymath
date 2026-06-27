@@ -217,6 +217,30 @@ long long fibonacci(int n) {
 }
 
 // ============================================================
+// Function 16: sine
+// Computes the sine of an angle in radians.
+// ============================================================
+double sine(double x) {
+    return std::sin(x);
+}
+
+// ============================================================
+// Function 17: cosine
+// Computes the cosine of an angle in radians.
+// ============================================================
+double cosine(double x) {
+    return std::cos(x);
+}
+
+// ============================================================
+// Function 18: tangent
+// Computes the tangent of an angle in radians.
+// ============================================================
+double tangent(double x) {
+    return std::tan(x);
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -292,4 +316,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("fibonacci", &fibonacci,
           "Compute the n-th Fibonacci number.",
           pybind11::arg("n"));
+
+    m.def("sine", &sine,
+          "Compute the sine of an angle in radians.",
+          pybind11::arg("x"));
+
+    m.def("cosine", &cosine,
+          "Compute the cosine of an angle in radians.",
+          pybind11::arg("x"));
+
+    m.def("tangent", &tangent,
+          "Compute the tangent of an angle in radians.",
+          pybind11::arg("x"));
 }

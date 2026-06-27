@@ -60,6 +60,15 @@ print(mymath.standard_deviation([2, 4, 4, 4, 5, 5, 7, 9]))  # 2.0
 # Fibonacci number
 print(mymath.fibonacci(10))        # 55
 
+# Sine
+print(mymath.sine(1.570796))       # ~1.0
+
+# Cosine
+print(mymath.cosine(3.141592))     # ~-1.0
+
+# Tangent
+print(mymath.tangent(0.785398))     # ~1.0
+
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
 ```
@@ -82,6 +91,9 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | `variance(numbers)` | Population variance of a list of numbers | `mymath.variance([2, 4, 4, 4, 5, 5, 7, 9])` → `4.0` |
 | `standard_deviation(numbers)` | Population standard deviation of a list | `mymath.standard_deviation([2, 4, 4, 4, 5, 5, 7, 9])` → `2.0` |
 | `fibonacci(n)` | Compute the n-th Fibonacci number | `mymath.fibonacci(10)` → `55` |
+| `sine(x)` | Compute the sine of an angle in radians | `mymath.sine(1.570796)` → `1.0` |
+| `cosine(x)` | Compute the cosine of an angle in radians | `mymath.cosine(3.141592)` → `-1.0` |
+| `tangent(x)` | Compute the tangent of an angle in radians | `mymath.tangent(0.785398)` → `1.0` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works
