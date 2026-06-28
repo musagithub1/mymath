@@ -15,6 +15,7 @@
 #include <numeric>              // For std::accumulate (to sum numbers)
 #include <stdexcept>            // For std::runtime_error (to raise errors)
 #include <cmath>                // For std::pow (exponentiation)
+#include <algorithm>            // For std::sort (for median calculation)
 
 // ============================================================
 // Function 1: add
@@ -241,6 +242,41 @@ double tangent(double x) {
 }
 
 // ============================================================
+// Function 19: degrees_to_radians
+// Converts degrees to radians.
+// ============================================================
+double degrees_to_radians(double degrees) {
+    const double PI = 3.14159265358979323846;
+    return degrees * (PI / 180.0);
+}
+
+// ============================================================
+// Function 20: radians_to_degrees
+// Converts radians to degrees.
+// ============================================================
+double radians_to_degrees(double radians) {
+    const double PI = 3.14159265358979323846;
+    return radians * (180.0 / PI);
+}
+
+// ============================================================
+// Function 21: median
+// Computes the median of a list of numbers.
+// ============================================================
+double median(std::vector<double> numbers) {
+    if (numbers.empty()) {
+        throw std::runtime_error("Cannot compute median of an empty list");
+    }
+    std::sort(numbers.begin(), numbers.end());
+    size_t size = numbers.size();
+    if (size % 2 == 0) {
+        return (numbers[size / 2 - 1] + numbers[size / 2]) / 2.0;
+    } else {
+        return numbers[size / 2];
+    }
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -328,4 +364,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("tangent", &tangent,
           "Compute the tangent of an angle in radians.",
           pybind11::arg("x"));
+
+    m.def("degrees_to_radians", &degrees_to_radians,
+          "Convert degrees to radians.",
+          pybind11::arg("degrees"));
+
+    m.def("radians_to_degrees", &radians_to_degrees,
+          "Convert radians to degrees.",
+          pybind11::arg("radians"));
+
+    m.def("median", &median,
+          "Compute the median of a list of numbers.",
+          pybind11::arg("numbers"));
 }

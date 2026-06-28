@@ -289,5 +289,39 @@ print(f"tangent(pi/4) = {result}")        # Expected: 1.0
 assert abs(result - 1.0) < 1e-9, f"Expected 1.0, got {result}"
 
 # ============================================================
+# Test 37: degrees_to_radians
+# ============================================================
+result = mymath.degrees_to_radians(180.0)
+print(f"degrees_to_radians(180.0) = {result}")  # Expected: pi (~3.14159265)
+assert abs(result - math.pi) < 1e-9, f"Expected {math.pi}, got {result}"
+
+# ============================================================
+# Test 38: radians_to_degrees
+# ============================================================
+result = mymath.radians_to_degrees(math.pi / 2.0)
+print(f"radians_to_degrees(pi/2) = {result}")  # Expected: 90.0
+assert abs(result - 90.0) < 1e-9, f"Expected 90.0, got {result}"
+
+# ============================================================
+# Test 39: median
+# ============================================================
+result1 = mymath.median([1, 3, 3, 6, 7, 8, 9])
+print(f"median([1, 3, 3, 6, 7, 8, 9]) = {result1}")  # Expected: 6.0
+assert result1 == 6.0, f"Expected 6.0, got {result1}"
+
+result2 = mymath.median([1, 2, 3, 4, 5, 6, 8, 9])
+print(f"median([1, 2, 3, 4, 5, 6, 8, 9]) = {result2}")  # Expected: 4.5
+assert result2 == 4.5, f"Expected 4.5, got {result2}"
+
+# ============================================================
+# Test 40: median empty list error
+# ============================================================
+try:
+    mymath.median([])
+    print("ERROR: median([]) should have raised an exception!")
+except RuntimeError as e:
+    print(f"median([]) correctly raised: {e}")
+
+# ============================================================
 print("\n✅ All tests passed!")
 
