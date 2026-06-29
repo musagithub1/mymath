@@ -69,6 +69,15 @@ print(mymath.cosine(3.141592))     # ~-1.0
 # Tangent
 print(mymath.tangent(0.785398))     # ~1.0
 
+# Hyperbolic Sine
+print(mymath.sinh(0.0))            # 0.0
+
+# Hyperbolic Cosine
+print(mymath.cosh(0.0))            # 1.0
+
+# Hyperbolic Tangent
+print(mymath.tanh(0.0))            # 0.0
+
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
 ```
@@ -94,6 +103,9 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | `sine(x)` | Compute the sine of an angle in radians | `mymath.sine(1.570796)` → `1.0` |
 | `cosine(x)` | Compute the cosine of an angle in radians | `mymath.cosine(3.141592)` → `-1.0` |
 | `tangent(x)` | Compute the tangent of an angle in radians | `mymath.tangent(0.785398)` → `1.0` |
+| `sinh(x)` | Compute the hyperbolic sine of a number | `mymath.sinh(0.0)` → `0.0` |
+| `cosh(x)` | Compute the hyperbolic cosine of a number | `mymath.cosh(0.0)` → `1.0` |
+| `tanh(x)` | Compute the hyperbolic tangent of a number | `mymath.tanh(0.0)` → `0.0` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works

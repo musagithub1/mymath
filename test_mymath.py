@@ -323,5 +323,29 @@ except RuntimeError as e:
     print(f"median([]) correctly raised: {e}")
 
 # ============================================================
+# Test 41: sinh
+# ============================================================
+result = mymath.sinh(0.0)
+print(f"sinh(0.0) = {result}")          # Expected: 0.0
+assert abs(result - 0.0) < 1e-9, f"Expected 0.0, got {result}"
+assert abs(mymath.sinh(1.0) - math.sinh(1.0)) < 1e-9, "Expected sinh(1.0) to match math.sinh(1.0)"
+
+# ============================================================
+# Test 42: cosh
+# ============================================================
+result = mymath.cosh(0.0)
+print(f"cosh(0.0) = {result}")          # Expected: 1.0
+assert abs(result - 1.0) < 1e-9, f"Expected 1.0, got {result}"
+assert abs(mymath.cosh(1.0) - math.cosh(1.0)) < 1e-9, "Expected cosh(1.0) to match math.cosh(1.0)"
+
+# ============================================================
+# Test 43: tanh
+# ============================================================
+result = mymath.tanh(0.0)
+print(f"tanh(0.0) = {result}")          # Expected: 0.0
+assert abs(result - 0.0) < 1e-9, f"Expected 0.0, got {result}"
+assert abs(mymath.tanh(1.0) - math.tanh(1.0)) < 1e-9, "Expected tanh(1.0) to match math.tanh(1.0)"
+
+# ============================================================
 print("\n✅ All tests passed!")
 

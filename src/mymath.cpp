@@ -277,6 +277,30 @@ double median(std::vector<double> numbers) {
 }
 
 // ============================================================
+// Function 22: sinh
+// Computes the hyperbolic sine of a number.
+// ============================================================
+double sinh_func(double x) {
+    return std::sinh(x);
+}
+
+// ============================================================
+// Function 23: cosh
+// Computes the hyperbolic cosine of a number.
+// ============================================================
+double cosh_func(double x) {
+    return std::cosh(x);
+}
+
+// ============================================================
+// Function 24: tanh
+// Computes the hyperbolic tangent of a number.
+// ============================================================
+double tanh_func(double x) {
+    return std::tanh(x);
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -376,4 +400,16 @@ PYBIND11_MODULE(mymath, m) {
     m.def("median", &median,
           "Compute the median of a list of numbers.",
           pybind11::arg("numbers"));
+
+    m.def("sinh", &sinh_func,
+          "Compute the hyperbolic sine of a number.",
+          pybind11::arg("x"));
+
+    m.def("cosh", &cosh_func,
+          "Compute the hyperbolic cosine of a number.",
+          pybind11::arg("x"));
+
+    m.def("tanh", &tanh_func,
+          "Compute the hyperbolic tangent of a number.",
+          pybind11::arg("x"));
 }
