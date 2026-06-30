@@ -301,6 +301,14 @@ double tanh_func(double x) {
 }
 
 // ============================================================
+// Function 25: hypotenuse
+// Computes the hypotenuse of a right-angled triangle (sqrt(x^2 + y^2)).
+// ============================================================
+double hypotenuse(double x, double y) {
+    return std::hypot(x, y);
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -412,4 +420,8 @@ PYBIND11_MODULE(mymath, m) {
     m.def("tanh", &tanh_func,
           "Compute the hyperbolic tangent of a number.",
           pybind11::arg("x"));
+
+    m.def("hypot", &hypotenuse,
+          "Compute the hypotenuse of a right-angled triangle (sqrt(x^2 + y^2)).",
+          pybind11::arg("x"), pybind11::arg("y"));
 }

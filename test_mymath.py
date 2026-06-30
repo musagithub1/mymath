@@ -347,5 +347,12 @@ assert abs(result - 0.0) < 1e-9, f"Expected 0.0, got {result}"
 assert abs(mymath.tanh(1.0) - math.tanh(1.0)) < 1e-9, "Expected tanh(1.0) to match math.tanh(1.0)"
 
 # ============================================================
+# Test 44: hypot
+# ============================================================
+result = mymath.hypot(3.0, 4.0)
+print(f"hypot(3.0, 4.0) = {result}")      # Expected: 5.0
+assert abs(result - 5.0) < 1e-9, f"Expected 5.0, got {result}"
+
+# ============================================================
 print("\n✅ All tests passed!")
 

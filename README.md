@@ -78,6 +78,9 @@ print(mymath.cosh(0.0))            # 1.0
 # Hyperbolic Tangent
 print(mymath.tanh(0.0))            # 0.0
 
+# Hypotenuse
+print(mymath.hypot(3.0, 4.0))      # 5.0
+
 # Average of a list
 print(mymath.average([10, 20, 30]))  # 20.0
 ```
@@ -106,6 +109,7 @@ print(mymath.average([10, 20, 30]))  # 20.0
 | `sinh(x)` | Compute the hyperbolic sine of a number | `mymath.sinh(0.0)` → `0.0` |
 | `cosh(x)` | Compute the hyperbolic cosine of a number | `mymath.cosh(0.0)` → `1.0` |
 | `tanh(x)` | Compute the hyperbolic tangent of a number | `mymath.tanh(0.0)` → `0.0` |
+| `hypot(x, y)` | Compute the hypotenuse of a right-angled triangle | `mymath.hypot(3.0, 4.0)` → `5.0` |
 | `average(numbers)` | Mean of a list of numbers | `mymath.average([10, 20, 30])` → `20.0` |
 
 ## How It Works
