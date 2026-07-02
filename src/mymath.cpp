@@ -309,6 +309,18 @@ double hypotenuse(double x, double y) {
 }
 
 // ============================================================
+// Function 26: percentage
+// Computes the percentage of a part relative to a total.
+// Throws an error if total is zero.
+// ============================================================
+double percentage(double part, double total) {
+    if (total == 0.0) {
+        throw std::runtime_error("Total cannot be zero when computing percentage");
+    }
+    return (part / total) * 100.0;
+}
+
+// ============================================================
 // PYBIND11_MODULE: This is the magic part!
 // It tells pybind11 to create a Python module called "mymath"
 // and register our C++ functions so Python can use them.
@@ -424,4 +436,8 @@ PYBIND11_MODULE(mymath, m) {
     m.def("hypot", &hypotenuse,
           "Compute the hypotenuse of a right-angled triangle (sqrt(x^2 + y^2)).",
           pybind11::arg("x"), pybind11::arg("y"));
+
+    m.def("percentage", &percentage,
+          "Compute the percentage of a part relative to a total.",
+          pybind11::arg("part"), pybind11::arg("total"));
 }

@@ -354,5 +354,21 @@ print(f"hypot(3.0, 4.0) = {result}")      # Expected: 5.0
 assert abs(result - 5.0) < 1e-9, f"Expected 5.0, got {result}"
 
 # ============================================================
+# Test 45: percentage
+# ============================================================
+result = mymath.percentage(20.0, 50.0)
+print(f"percentage(20.0, 50.0) = {result}")  # Expected: 40.0
+assert abs(result - 40.0) < 1e-9, f"Expected 40.0, got {result}"
+
+# ============================================================
+# Test 46: percentage total zero error
+# ============================================================
+try:
+    mymath.percentage(20.0, 0.0)
+    print("ERROR: percentage(20.0, 0.0) should have raised an exception!")
+except RuntimeError as e:
+    print(f"percentage(20.0, 0.0) correctly raised: {e}")
+
+# ============================================================
 print("\n✅ All tests passed!")
 
